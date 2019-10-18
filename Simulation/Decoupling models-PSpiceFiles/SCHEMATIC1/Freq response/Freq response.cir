@@ -1,0 +1,21 @@
+** Profile: "SCHEMATIC1-Freq response"  [ C:\Users\Matthew Einhorn\Desktop\CPL ADC Board\Noise\decoupling\decoupling models-pspicefiles\schematic1\freq response.sim ] 
+
+** Creating circuit file "Freq response.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+.INC "C:\Users\Matthew Einhorn\Desktop\CPL ADC Board\Noise\decoupling\decoupling models-pspicefiles\schematic1\Freq response\Freq r"
++ "esponse_profile.inc" 
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Matthew Einhorn\Documents\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.AC DEC 1000 1k 1G
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+.END

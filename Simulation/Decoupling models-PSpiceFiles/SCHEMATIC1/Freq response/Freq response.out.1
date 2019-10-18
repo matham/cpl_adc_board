@@ -1,0 +1,84 @@
+
+**** 12/26/12 07:46:06 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Freq response"  [ C:\Users\Matthew Einhorn\Desktop\CPL ADC Board\Noise\decoupling\decoupling models-pspicefi
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Freq response.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+.INC "C:\Users\Matthew Einhorn\Desktop\CPL ADC Board\Noise\decoupling\decoupling models-pspicefiles\schematic1\Freq response\Freq r"
++ "esponse_profile.inc" 
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Matthew Einhorn\Documents\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+
+**** INCLUDING "Freq response_profile.inc" ****
+.LIB    ".\grm188r60j106me47.lib" 
+
+**** RESUMING "Freq response.cir" ****
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.AC DEC 1000 1k 1G
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source DECOUPLING MODELS
+L_L6         N11409 N11373  8.6uH  
+R_R12         N11409 N11373  470 TC=0,0 
+C_C10         N11373 N11409  258.3nF  TC=0,0 
+R_R14         N65896 N226220  0.1 TC=0,0 
+V_V1         N226220 0 5Vdc
+R_R13         N65896 N11409  0.11 TC=0,0 
+R_R3         N11373 0  .1Meg TC=0,0 
+X_U1         0 N11373 GRM188R60J106ME47 
+R_R32         0 N66962  .9G TC=0,0 
+R_R31         N66962 N669060  0.0056 TC=0,0 
+C_C12         N66962 0  1u  
+L_L8         N669060 0  0.42nH  
+I_I7         N69329 0 DC 0Adc AC 0Aac
++PULSE 0 1 0 1p 1p 5n 1u
+R_R37         N69329 0  300k TC=0,0 
+L_L9         N698670 0  0.42nH  
+R_R38         N69923 N698670  0.0163 TC=0,0 
+R_R39         0 N69923  18G TC=0,0 
+C_C13         N69923 0  100n  
+R_R47         N72610 N730760  0.1 TC=0,0 
+V_V2         N730760 0 5Vdc
+R_R46         N72610 N73040  18G TC=0,0 
+L_L10         N726900 0  0.42nH  
+C_C14         N72746 N72610  1u  
+R_R43         N72610 0  .1Meg TC=0,0 
+R_R42         N72610 N72746  .9G TC=0,0 
+L_L11         N729840 0  0.42nH  
+R_R45         N73040 N729840  0.0163 TC=0,0 
+R_R41         N72746 N726900  0.0056 TC=0,0 
+X_U2         0 N72610 GRM188R60J106ME47 
+C_C15         N73040 N72610  100n  
+I_I8         N11373 0 DC 0Adc AC 1Aac 
+I_I9         N72610 0 DC 0Adc AC 1Aac 
+X_U3         0 N11373 GRM188R71E105KA12 
+X_U4         0 N11373 GRM188R61E104KA01 
+
+**** RESUMING "Freq response.cir" ****
+.END
+
+
+ERROR(ORPSIM-15108): Subcircuit GRM188R71E105KA12 used by X_U3 is undefined
+
+ERROR(ORPSIM-15108): Subcircuit GRM188R61E104KA01 used by X_U4 is undefined
+
